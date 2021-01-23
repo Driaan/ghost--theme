@@ -38,13 +38,14 @@
         </div>
         <div class="gh-head-actions">
             <div class="gh-head-actions-list">
-                {{#if @site.facebook}}
+                <a href="/ghost" title="Console">Console</a>
+                {{!-- {{#if @site.facebook}}
                 <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
                 {{/if}}
                 {{#if @site.twitter}}
                 <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                 {{/if}}
-                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a> --}}
             </div>
         </div>
     </nav>
@@ -57,7 +58,7 @@
 
 </main>
 
-<footer class="gh-foot">
+{{!-- <footer class="gh-foot">
     <div class="gh-container">
         <div class="gh-foot-menu">
             {{navigation}}
@@ -66,7 +67,7 @@
             Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
         </div>
     </div>
-</footer>
+</footer> --}}
 
 </div>
 
