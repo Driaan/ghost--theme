@@ -1,50 +1,62 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<main id="site-main" class="container">
-    <div class="p-5 m-5">
+<article class="gh-article {{post_class}}">
 
-        <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+    <header class="gh-header gh-canvas">
+        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        <h1 class="gh-title">{{title}}</h1>
 
-            <h1 class="text-center">{{title}}</h1>
+        {{#if custom_excerpt}}
+        <p class="gh-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
 
-            {{!-- Display author, date and tags --}}
-            <div class="text-center text-upper m-5">
-                <a class="text-danger" href="{{primary_author.url}}">
-                    {{primary_author.name}}
-                </a>
+        {{#if feature_image}}
+        <img class="gh-feature-image"
+            srcset="{{img_url feature_image size="s"}} 300w,
+                    {{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1000w,
+                    {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 1000px) 1000px, 2000px"
+            loading="lazy"
+            src="{{img_url feature_image size="xl"}}"
+            alt="{{title}}"
+        />
+        {{/if}}
+    </header>
 
-                <time datetime="{{date format="YYYY-MM-DD"}}">
-                    - {{date format="D MMMM YYYY"}}
-                </time>
-
-                {{!-- Displays upto three tags separated by comma --}}
-                <p class="m-3">
-                    {{tags prefix="Tagged in: " separator="&comma; " limit="3"}}
-                </p>
-            </div>
-
-            {{!-- Displays the featured image if exists --}}
-            {{#if feature_image}}
-            <figure>
-                <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid" />
-            </figure>
-            {{/if}}
-
-            <section class="mt-5">
-                <div class="post-content">
-                    {{!-- Display the post content --}}
-                    {{content}}
-                </div>
-            </section>
-
-        </article>
-
+    <div class="gh-content gh-canvas">
+        {{content}}
     </div>
-</main>
+
+    <footer class="gh-footer gh-canvas">
+
+        <div class="gh-post-authors">
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+
+        {{!--
+        <section class="gh-post-comments">
+            If you want to embed comments, this is a good place to do it!
+        </section>
+        --}}
+
+    </footer>
+
+</article>
+
+<aside class="gh-readmore">
+    <div class="gh-readmore-inner gh-container">
+        <div class="gh-readmore-next">
+            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+        </div>
+        <div class="gh-readmore-prev">
+            {{#prev_post}}<a href="{{url}}">
+                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
+            </a>{{/prev_post}}
+        </div>
+    </div>
+</aside>
 
 {{/post}}
