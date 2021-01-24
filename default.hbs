@@ -38,7 +38,7 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    {{!-- <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" /> --}}
 
     <title>{{meta_title}}</title>
 
@@ -203,24 +203,24 @@
 
     {{!-- <foot> --}}
 
-        <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
+        {{!-- <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
 
         {{#if pagination.pages}}
         <script>
             var maxPages = parseInt('{{pagination.pages}}');
         </script>
         <script src="{{asset "built/infinitescroll.js"}}"></script>
-        {{/if}}
+        {{/if}} --}}
 
-        <script>
+        {{!-- <script>
             $(document).ready(function () {
                 // Mobile Menu Trigger
                 $('.gh-burger').click(function () {
                     $('body').toggleClass('gh-head-open');
                 });
             });
-        </script>
-
+        </script> --}}
+{{!-- 
         {{#is "post, page"}}
         <script src="{{asset "built/jquery.fitvids.js"}}"></script>
         <script>
@@ -237,7 +237,7 @@
                 $postContent.fitVids();
             });
         </script>
-        {{/is}}
+        {{/is}} --}}
 
         {{ghost_foot}}
         {{!-- Outputs important scripts - should always be included before closing body tag --}}
