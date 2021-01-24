@@ -47,7 +47,7 @@
         </div>
         <div class="row">
           <div class="d-none d-lg-block col-lg-3">
-            <ul class="nav nav-vertical">
+            {{!-- <ul class="nav nav-vertical">
               <li class="nav-item">
                 <a href="#menu-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
                   <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
@@ -319,6 +319,19 @@
                   <span class="badge bg-blue-lt ms-auto">1.0.0-alpha.22</span>
                 </a>
               </li>
+            </ul> --}}
+            <ul class="nav nav-vertical">
+              {{#post}}
+              {{#get "posts" filter="primary_tag:{{primary_tag.slug}}"}}
+              {{#foreach posts}}
+              <li class="nav-item">
+                <a href="{{url}}" class="nav-link">
+                  {{title}}
+                </a>
+              </li>
+              {{/foreach}}
+              {{/get}}
+              {{/post}}
             </ul>
           </div>
           <div class="col-lg-9">
