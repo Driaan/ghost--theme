@@ -324,7 +324,28 @@
           <div class="col-lg-9">
             <div class="card card-lg">
               <div class="card-body">
-                <div class="markdown">
+                {{#post}}
+                <article class="gh-article {{post_class}}">
+
+                  <header class="gh-header gh-canvas">
+                    <h1 class="gh-title">{{title}}</h1>
+
+                    {{#if custom_excerpt}}
+                    <p class="gh-excerpt">{{custom_excerpt}}</p>
+                    {{/if}}
+
+                    {{#if feature_image}}
+                    <img class="gh-feature-image" src="{{feature_image}}" alt="{{title}}" />
+                    {{/if}}
+                  </header>
+
+                  <div class="gh-content gh-canvas">
+                    {{content}}
+                  </div>
+
+                </article>
+                {{/post}}
+                {{!-- <div class="markdown">
                   <div>
                     <div class="d-flex mb-4">
                       <h1 class="mt-0">Introduction</h1>
@@ -389,7 +410,7 @@
                   <h2 id="bugs-and-feature-requests">Bugs and feature requests</h2>
                   <p>Found a bug or have a feature request? <a href="https://github.com/tabler/tabler/issues/new">Please
                       open a new issue</a>.</p>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
