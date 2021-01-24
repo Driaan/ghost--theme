@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
-    <script src="{{asset " js/require.min.js"}}"></script>
+    <script src="{{asset "js/require.min.js"}}"></script>
     <script>
         requirejs.config({
             baseUrl: '.'
@@ -38,7 +38,7 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="{{asset " built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
     <title>{{meta_title}}</title>
 
@@ -203,13 +203,13 @@
 
     {{!-- <foot> --}}
 
-        <script src="{{asset " built/jquery-3.4.1.min.js"}}"></script>
+        <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
 
         {{#if pagination.pages}}
         <script>
             var maxPages = parseInt('{{pagination.pages}}');
         </script>
-        <script src="{{asset " built/infinitescroll.js"}}"></script>
+        <script src="{{asset "built/infinitescroll.js"}}"></script>
         {{/if}}
 
         <script>
@@ -222,7 +222,7 @@
         </script>
 
         {{#is "post, page"}}
-        <script src="{{asset " built/jquery.fitvids.js"}}"></script>
+        <script src="{{asset "built/jquery.fitvids.js"}}"></script>
         <script>
             var images = document.querySelectorAll('.kg-gallery-image img');
             images.forEach(function (image) {
