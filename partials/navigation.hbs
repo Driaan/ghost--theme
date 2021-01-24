@@ -1,0 +1,20 @@
+{{!-- <div class="my-fancy-nav-wrapper">
+    <ul class="nav">
+        <!-- Loop through the navigation items -->
+        {{#foreach navigation}}
+        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute=" true"}}">{{label}}</a></li>
+        {{/foreach}}
+        <!-- End the loop -->
+    </ul>
+</div> --}}
+
+
+<div class="col-lg order-lg-first">
+    <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+        {{#foreach navigation}}
+        <li class="nav-item">
+            <a href="{{url absolute=" true"}}" class="nav-link">{{label}}</a>
+        </li>
+        {{/foreach}}
+    </ul>
+</div>
