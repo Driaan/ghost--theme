@@ -2,7 +2,6 @@
 <html lang="{{@site.lang}}" dir="ltr">
 
 <head>
-
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -35,45 +34,28 @@
     <script src="{{asset "plugins/maps-google/plugin.js"}}"></script>
     <!-- Input Mask Plugin -->
     <script src="{{asset "plugins/input-mask/plugin.js"}}"></script>
-
-
-
-    {{!--
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" /> --}}
-
     <title>{{meta_title}}</title>
-
     {{ghost_head}}
-    {{!-- Outputs important meta data and settings, should always be in
-
-    <head> --}}
-
-    </head>
+</head>
 
 <body class="{{body_class}}">
-
-
     <div class="page">
         <div class="page-main">
             <div class="header py-4">
                 <div class="container">
                     <div class="d-flex">
                         <a class="header-brand" href="/index.html">
-                            <img src="/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
+                            {{!-- <img src="/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo"> --}}
+                            {{@site.title}}
                         </a>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="nav-item d-none d-md-flex">
                                 <a href="/ghost" class="btn btn-sm btn-outline-primary" target="_blank">Console</a>
                             </div>
                             <div class="dropdown d-none d-md-flex">
-                                <a class="nav-link icon" data-toggle="dropdown">
-                                    <i class="fe fe-bell"></i>
-                                    <span class="nav-unread"></span>
-                                </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                     <a href="#" class="dropdown-item d-flex">
-                                        <span class="avatar mr-3 align-self-center"
-                                            style="background-image: url(demo/faces/male/41.jpg)"></span>
+                                        <span class="avatar mr-3 align-self-center"></span>
                                         <div>
                                             <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
                                             <div class="small text-muted">10 minutes ago</div>
@@ -148,219 +130,17 @@
                                 </div>
                             </form>
                         </div>
-                        
-                           {{navigation}}
-                        
+
+                        {{navigation}}
+
                     </div>
                 </div>
             </div>
             <div class="my-3 my-md-5">
-                <div class="container">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">#INV0015</h3>
-                            <div class="card-options">
-                                <button type="button" class="btn btn-primary" onclick="javascript:window.print();"><i
-                                        class="si si-printer"></i> Print Invoice</button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row my-8">
-                                <div class="col-6">
-                                    <p class="h3">Company</p>
-                                    <address>
-                                        Street Address<br>
-                                        State, City<br>
-                                        Region, Postal Code<br>
-                                        ltd@example.com
-                                    </address>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <p class="h3">Client</p>
-                                    <address>
-                                        Street Address<br>
-                                        State, City<br>
-                                        Region, Postal Code<br>
-                                        ctr@example.com
-                                    </address>
-                                </div>
-                            </div>
-                            <div class="table-responsive push">
-                                <table class="table table-bordered table-hover">
-                                    <tr>
-                                        <th class="text-center" style="width: 1%"></th>
-                                        <th>Product</th>
-                                        <th class="text-center" style="width: 1%">Qnt</th>
-                                        <th class="text-right" style="width: 1%">Unit</th>
-                                        <th class="text-right" style="width: 1%">Amount</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>
-                                            <p class="font-w600 mb-1">Logo Creation</p>
-                                            <div class="text-muted">Logo and business cards design</div>
-                                        </td>
-                                        <td class="text-center">
-                                            1
-                                        </td>
-                                        <td class="text-right">$1.800,00</td>
-                                        <td class="text-right">$1.800,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>
-                                            <p class="font-w600 mb-1">Online Store Design &amp; Development</p>
-                                            <div class="text-muted">Design/Development for all popular modern browsers
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            1
-                                        </td>
-                                        <td class="text-right">$20.000,00</td>
-                                        <td class="text-right">$20.000,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>
-                                            <p class="font-w600 mb-1">App Design</p>
-                                            <div class="text-muted">Promotional mobile application</div>
-                                        </td>
-                                        <td class="text-center">
-                                            1
-                                        </td>
-                                        <td class="text-right">$3.200,00</td>
-                                        <td class="text-right">$3.200,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="font-w600 text-right">Subtotal</td>
-                                        <td class="text-right">$25.000,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="font-w600 text-right">Vat Rate</td>
-                                        <td class="text-right">20%</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="font-w600 text-right">Vat Due</td>
-                                        <td class="text-right">$5.000,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="font-weight-bold text-uppercase text-right">Total Due
-                                        </td>
-                                        <td class="font-weight-bold text-right">$30.000,00</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <p class="text-muted text-center">Thank you very much for doing business with us. We look
-                                forward to working with you again!</p>
-                        </div>
-                    </div>
-                </div>
+                {{{body}}}
             </div>
         </div>
     </div>
-    <div class="gh-viewport">
-
-        <header id="gh-head" class="gh-head">
-            <nav class="gh-head-inner gh-container">
-
-                <div class="gh-head-brand">
-                    <a class="gh-head-logo" href="{{@site.url}}">
-                        {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                        {{else}}
-                        {{@site.title}}
-                        {{/if}}
-                    </a>
-                    <a class="gh-burger" role="button">
-                        <div class="gh-burger-box">
-                            <div class="gh-burger-inner"></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="gh-head-menu">
-                    
-                </div>
-                <div class="gh-head-actions">
-                    <div class="gh-head-actions-list">
-                        <a href="/ghost" title="Console">Console</a>
-                        {{!-- {{#if @site.facebook}}
-                        <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{>
-                            "icons/facebook"}}</a>
-                        {{/if}}
-                        {{#if @site.twitter}}
-                        <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{>
-                            "icons/twitter"}}</a>
-                        {{/if}}
-                        <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
-                            rel="noopener">{{> "icons/rss"}}</a> --}}
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <main class="gh-main">
-
-            {{{body}}}
-            {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
-
-        </main>
-
-        {{!-- <footer class="gh-foot">
-            <div class="gh-container">
-                <div class="gh-foot-menu">
-                    {{navigation}}
-                </div>
-                <div class="gh-foot-meta">
-                    Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </div>
-            </div>
-        </footer> --}}
-
-    </div>
-
-    {{!-- <foot> --}}
-
-        {{!--
-        <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
-
-        {{#if pagination.pages}}
-        <script>
-            var maxPages = parseInt('{{pagination.pages}}');
-        </script>
-        <script src="{{asset "built/infinitescroll.js"}}"></script>
-        {{/if}} --}}
-
-        {{!--
-        <script>
-            $(document).ready(function () {
-                // Mobile Menu Trigger
-                $('.gh-burger').click(function () {
-                    $('body').toggleClass('gh-head-open');
-                });
-            });
-        </script> --}}
-        {{!--
-        {{#is "post, page"}}
-        <script src="{{asset "built/jquery.fitvids.js"}}"></script>
-        <script>
-            var images = document.querySelectorAll('.kg-gallery-image img');
-            images.forEach(function (image) {
-                var container = image.closest('.kg-gallery-image');
-                var width = image.attributes.width.value;
-                var height = image.attributes.height.value;
-                var ratio = width / height;
-                container.style.flex = ratio + ' 1 0%';
-            });
-            $(document).ready(function () {
-                var $postContent = $(".gh-content");
-                $postContent.fitVids();
-            });
-        </script>
-        {{/is}} --}}
-
-        {{ghost_foot}}
-        {{!-- Outputs important scripts - should always be included before closing body tag --}}
-
 </body>
 
 </html>
