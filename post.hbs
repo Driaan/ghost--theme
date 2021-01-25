@@ -1,65 +1,97 @@
-{{!< default}}
-
-{{#post}}
-
-        <div class="my-3 my-md-5">
-          <div class="container">
-            <div class="page-header">
-              <h1 class="page-title">
-                {{title}}
-              </h1>
+{{!< default}} <div class="container-xl">
+    <div class="page-header d-print-none">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    Documentation
+                </h2>
             </div>
-            <div class="row">
-              <div class="col-lg-3 order-lg-1 mb-4">
-                {{!-- <a href="https://github.com/tabler/tabler" class="btn btn-block btn-primary mb-6">
-                  <i class="fe fe-github mr-2"></i>Edit
-                </a>
-             
-                <div class="list-group list-group-transparent mb-0">
-                  <a href="../docs/index.html" class="list-group-item list-group-item-action active"><span class="icon mr-3"><i class="fe fe-flag"></i></span>Introduction</a>
-                </div>
-     
-                <div class="list-group list-group-transparent mb-0">
-                  <a href="../docs/alerts.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-alert-triangle"></i></span>Alerts</a>
-                  <a href="../docs/avatars.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-user"></i></span>Avatars</a>
-                  <a href="../docs/buttons.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-plus-square"></i></span>Buttons</a>
-                  <a href="../docs/colors.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-feather"></i></span>Colors</a>
-                  <a href="../docs/cards.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-image"></i></span>Cards</a>
-                  <a href="../docs/charts.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-pie-chart"></i></span>Charts</a>
-                  <a href="../docs/form-components.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-check-square"></i></span>Form components</a>
-                  <a href="../docs/tags.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-tag"></i></span>Tags</a>
-                  <a href="../docs/typography.html" class="list-group-item list-group-item-action"><span class="icon mr-3"><i class="fe fe-type"></i></span>Typography</a>
-                </div> --}}
-                <div class="d-none d-lg-block mt-6">
-                  <a href="https://github.com/tabler/tabler/edit/dev/src/_docs/index.md" class="text-muted">Edit this page</a>
-                </div>
-              </div>
-              <div class="col-lg-9">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="text-wrap p-lg-6">
-                     {{content}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-{{!-- <aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
-        </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
         </div>
     </div>
-</aside> --}}
-
-{{/post}}
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-3">
+            <ul class="nav nav-vertical">
+                <li class="nav-item">
+                    <a href="#all-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+                        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M8 9l3 3l-3 3" />
+                                <line x1="13" y1="15" x2="16" y2="15" />
+                                <rect x="4" y="4" width="16" height="16" rx="4" />
+                            </svg>
+                        </span>
+                        All
+                        <span class="nav-link-toggle"></span>
+                    </a>
+                    <ul class="nav nav-pills collapse show" id="all-base">
+                        {{#get "posts" include="all"}}
+                        {{#foreach posts}}
+                        {{#has tag="student, hevisco"}}
+                        {{else}}
+                        {{> "docsVerticalListItem"}}
+                        {{/has}}
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#student-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+                        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M8 9l3 3l-3 3" />
+                                <line x1="13" y1="15" x2="16" y2="15" />
+                                <rect x="4" y="4" width="16" height="16" rx="4" />
+                            </svg>
+                        </span>
+                        Student
+                        <span class="nav-link-toggle"></span>
+                    </a>
+                    <ul class="nav nav-pills collapse show" id="student-base">
+                        {{#get "posts" include="student"}}
+                        {{#foreach posts}}
+                        {{#has tag="student"}}
+                        {{> "docsVerticalListItem"}}
+                        {{/has}}
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#hevisco-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+                        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M8 9l3 3l-3 3" />
+                                <line x1="13" y1="15" x2="16" y2="15" />
+                                <rect x="4" y="4" width="16" height="16" rx="4" />
+                            </svg>
+                        </span>
+                        HevisCo
+                        <span class="nav-link-toggle"></span>
+                    </a>
+                    <ul class="nav nav-pills collapse show" id="hevisco-base">
+                        {{#get "posts" include="hevisco"}}
+                        {{#foreach posts}}
+                        {{#has tag="hevisco"}}
+                        {{> "docsVerticalListItem"}}
+                        {{/has}}
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <div class="card card-lg">
+                <div class="card-body">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
