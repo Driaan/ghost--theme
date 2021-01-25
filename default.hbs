@@ -321,6 +321,7 @@
               </li>
             </ul> --}}
             <ul class="nav nav-vertical">
+              {{#post}}
               {{#get "posts" filter="primary_tag:{{primary_tag.slug}}"}}
               {{#foreach posts}}
               <li class="nav-item">
@@ -330,6 +331,7 @@
               </li>
               {{/foreach}}
               {{/get}}
+              {{/post}}
             </ul>
           </div>
           <div class="col-lg-9">
