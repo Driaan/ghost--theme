@@ -1,11 +1,11 @@
-{{!< default}} <div class="container-xl">
+{{!< default}}{{#post}} <div class="container-xl">
   <div class="page-header d-print-none">
     <div class="row align-items-center">
       <div class="col">
         <h2 class="page-title">
-          {{#post}}
+
           {{title}}
-          {{/post}}
+
         </h2>
       </div>
     </div>
@@ -91,11 +91,10 @@
     <div class="col-lg-9">
       <div class="card card-lg">
         <div class="card-body">
-          {{#post}}
           {{content}}
-          {{/poost}}
         </div>
       </div>
     </div>
   </div>
   </div>
+  {{/post}}
