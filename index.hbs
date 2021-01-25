@@ -11,22 +11,35 @@
     <div class="row">
         <div class="d-none d-lg-block col-lg-3">
             <ul class="nav nav-vertical">
+
                 all
+
                 {{#get "posts" include="all"}}
                 {{#foreach posts}}
-                {{title}}
+                {{#has tag="student, hevisco"}}
+                {{else}}
+                {{> "docsVerticalListItem"}}
+                {{/has}}
                 {{/foreach}}
                 {{/get}}
+
                 student
+
                 {{#get "posts" include="student"}}
                 {{#foreach posts}}
-                {{title}}
+                {{#has tag="student"}}
+                {{> "docsVerticalListItem"}}
+                {{/has}}
                 {{/foreach}}
                 {{/get}}
+
                 hevisco
+
                 {{#get "posts" include="hevisco"}}
                 {{#foreach posts}}
-                {{title}}
+                {{#has tag="hevisco"}}
+                {{> "docsVerticalListItem"}}
+                {{/has}}
                 {{/foreach}}
                 {{/get}}
             </ul>
