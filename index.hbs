@@ -12,7 +12,7 @@
         <div class="d-none d-lg-block col-lg-3">
             <ul class="nav nav-vertical">
                 <li class="nav-item">
-                    <a href="#menu-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+                    <a href="#all-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
                         <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -22,23 +22,24 @@
                                 <rect x="4" y="4" width="16" height="16" rx="4" />
                             </svg>
                         </span>
-                        all
-
+                        All
                         <span class="nav-link-toggle"></span>
                     </a>
-                    {{#get "posts" include="all"}}
-                    {{#foreach posts}}
-                    {{#has tag="student, hevisco"}}
-                    {{else}}
-                    {{> "docsVerticalListItem"}}
-                    {{/has}}
-                    {{/foreach}}
-                    {{/get}}
+                    <ul class="nav nav-pills collapse show" id="all-base">
+                        {{#get "posts" include="all"}}
+                        {{#foreach posts}}
+                        {{#has tag="student, hevisco"}}
+                        {{else}}
+                        {{> "docsVerticalListItem"}}
+                        {{/has}}
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
                 </li>
 
 
                 <li class="nav-item">
-                    <a href="#menu-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+                    <a href="#student-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
                         <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -48,22 +49,22 @@
                                 <rect x="4" y="4" width="16" height="16" rx="4" />
                             </svg>
                         </span>
-                        student
-
+                        Student
                         <span class="nav-link-toggle"></span>
                     </a>
-
-                    {{#get "posts" include="student"}}
-                    {{#foreach posts}}
-                    {{#has tag="student"}}
-                    {{> "docsVerticalListItem"}}
-                    {{/has}}
-                    {{/foreach}}
-                    {{/get}}
+                    <ul class="nav nav-pills collapse show" id="student-base">
+                        {{#get "posts" include="student"}}
+                        {{#foreach posts}}
+                        {{#has tag="student"}}
+                        {{> "docsVerticalListItem"}}
+                        {{/has}}
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#menu-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+                    <a href="#hevisco-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
                         <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -73,18 +74,19 @@
                                 <rect x="4" y="4" width="16" height="16" rx="4" />
                             </svg>
                         </span>
-                        hevisco
-
+                        HevisCo
                         <span class="nav-link-toggle"></span>
                     </a>
+                    <ul class="nav nav-pills collapse show" id="hevisco-base">
 
-                    {{#get "posts" include="hevisco"}}
-                    {{#foreach posts}}
-                    {{#has tag="hevisco"}}
-                    {{> "docsVerticalListItem"}}
-                    {{/has}}
-                    {{/foreach}}
-                    {{/get}}
+                        {{#get "posts" include="hevisco"}}
+                        {{#foreach posts}}
+                        {{#has tag="hevisco"}}
+                        {{> "docsVerticalListItem"}}
+                        {{/has}}
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
                 </li>
 
             </ul>
