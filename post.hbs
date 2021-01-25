@@ -28,12 +28,9 @@
             <span class="nav-link-toggle"></span>
           </a>
           <ul class="nav nav-pills collapse show" id="all-base">
-            {{#get "posts" include="all"}}
+            {{#get "posts" filter="tags:-[student, hevisco]"}}
             {{#foreach posts}}
-            {{#has tag="student, hevisco"}}
-            {{else}}
             {{> "docsVerticalListItem"}}
-            {{/has}}
             {{/foreach}}
             {{/get}}
           </ul>
@@ -53,11 +50,9 @@
             <span class="nav-link-toggle"></span>
           </a>
           <ul class="nav nav-pills collapse show" id="student-base">
-            {{#get "posts" include="student"}}
+            {{#get "posts" filter="tags:[student]"}}
             {{#foreach posts}}
-            {{#has tag="student"}}
             {{> "docsVerticalListItem"}}
-            {{/has}}
             {{/foreach}}
             {{/get}}
           </ul>
@@ -77,11 +72,9 @@
             <span class="nav-link-toggle"></span>
           </a>
           <ul class="nav nav-pills collapse show" id="hevisco-base">
-            {{#get "posts" include="hevisco"}}
+            {{#get "posts" filter="tags:[hevisco]"}}
             {{#foreach posts}}
-            {{#has tag="hevisco"}}
             {{> "docsVerticalListItem"}}
-            {{/has}}
             {{/foreach}}
             {{/get}}
           </ul>
