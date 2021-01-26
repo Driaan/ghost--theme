@@ -85,6 +85,13 @@
           <div class="page-header">
             <div class="row align-items-center mw-100">
               <div class="col">
+                <div class="mb-1">
+                  <ol class="breadcrumb breadcrumb-alternate" aria-label="breadcrumbs">
+                    {{#foreach tags}}
+                    <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+                    {{/foreach}}
+                  </ol>
+                </div>
                 <h2 class="page-title">
                   <span class="text-truncate">{{title}}</span>
                 </h2>
