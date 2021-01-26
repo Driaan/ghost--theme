@@ -13,15 +13,6 @@
       <ul class="nav nav-vertical">
         <li class="nav-item">
           <a href="#all-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
-            <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M8 9l3 3l-3 3" />
-                <line x1="13" y1="15" x2="16" y2="15" />
-                <rect x="4" y="4" width="16" height="16" rx="4" />
-              </svg>
-            </span>
             All
             <span class="nav-link-toggle"></span>
           </a>
@@ -35,13 +26,10 @@
         </li>
         <li class="nav-item">
           <a href="#student-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
-            <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M8 9l3 3l-3 3" />
-                <line x1="13" y1="15" x2="16" y2="15" />
-                <rect x="4" y="4" width="16" height="16" rx="4" />
+            <span class="nav-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" data-name="Layer 1" viewBox="0 0 24 24">
+                <path fill="#232e3c"
+                  d="M21,10a.99974.99974,0,0,0,1-1V6a.9989.9989,0,0,0-.68359-.94824l-9-3a1.002,1.002,0,0,0-.63282,0l-9,3A.9989.9989,0,0,0,2,6V9a.99974.99974,0,0,0,1,1H4v7.18427A2.99507,2.99507,0,0,0,2,20v2a.99974.99974,0,0,0,1,1H21a.99974.99974,0,0,0,1-1V20a2.99507,2.99507,0,0,0-2-2.81573V10ZM20,21H4V20a1.001,1.001,0,0,1,1-1H19a1.001,1.001,0,0,1,1,1ZM6,17V10H8v7Zm4,0V10h4v7Zm6,0V10h2v7ZM4,8V6.7207l8-2.667,8,2.667V8Z" />
               </svg>
             </span>
             Student
@@ -82,7 +70,7 @@
     <div class="col-lg-9">
       <div class="card card-lg">
         <div class="card-body">
-          <div class="d-flex mb-4">
+          {{!-- <div class="d-flex mb-4">
             <h1 class="mt-0">{{title}}</h1>
             <p class="ms-auto">
               <a href="edit/" target="_blank">
@@ -97,6 +85,29 @@
                 Edit
               </a>
             </p>
+          </div> --}}
+          <div class="page-header">
+            <div class="row align-items-center mw-100">
+              <div class="col">
+                <h2 class="page-title">
+                  <span class="text-truncate">{{title}}</span>
+                </h2>
+              </div>
+              <div class="col-auto">
+                <div class="btn-list">
+                  <a href="edit/" class="btn btn-white d-none d-md-inline-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                      <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                      <line x1="16" y1="5" x2="19" y2="8" />
+                    </svg>
+                    Edit
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
           {{content}}
         </div>
