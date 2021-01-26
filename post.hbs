@@ -28,7 +28,6 @@
           <ul class="nav nav-pills collapse show" id="all-base">
             {{#get "posts" filter="tags:-[student, hevisco]"}}
             {{#foreach posts}}
-            {{#if current}} active{{/if}}
             {{> "docsVerticalListItem"}}
             {{/foreach}}
             {{/get}}
@@ -51,6 +50,7 @@
           <ul class="nav nav-pills collapse show" id="student-base">
             {{#get "posts" filter="tags:[student]"}}
             {{#foreach posts}}
+            {{#if current}} active{{/if}}
             {{> "docsVerticalListItem"}}
             {{/foreach}}
             {{/get}}
