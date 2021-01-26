@@ -22,7 +22,7 @@
                 <rect x="4" y="4" width="16" height="16" rx="4" />
               </svg>
             </span>
-            All 
+            All
             <span class="nav-link-toggle"></span>
           </a>
           <ul class="nav nav-pills collapse show" id="all-base">
@@ -50,7 +50,6 @@
           <ul class="nav nav-pills collapse show" id="student-base">
             {{#get "posts" filter="tags:[student]"}}
             {{#foreach posts}}
-            {{#if current}} active{{/if}}
             {{> "docsVerticalListItem"}}
             {{/foreach}}
             {{/get}}
@@ -86,7 +85,7 @@
           <div class="d-flex mb-4">
             <h1 class="mt-0">{{title}}</h1>
             <p class="ms-auto">
-              <a href="https://getbootstrap.com/docs/4.4/components/breadcrumb/" target="_blank">
+              <a href="edit/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon pe-1 text-blue" width="24" height="24"
                   viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                   stroke-linejoin="round">
