@@ -109,36 +109,6 @@
     <div class="col-lg-9">
       <div class="card card-lg">
         <div class="card-body">
-          <div class="page-header">
-            <div class="row align-items-center mw-100">
-              <div class="col">
-                <div class="mb-1">
-                  <ol class="breadcrumb breadcrumb-alternate" aria-label="breadcrumbs">
-                    {{#foreach tags}}
-                    <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
-                    {{/foreach}}
-                  </ol>
-                </div>
-                <h2 class="page-title">
-                  <span class="text-truncate">{{title}}</span>
-                </h2>
-              </div>
-              <div class="col-auto">
-                <div class="btn-list">
-                  <a href="edit/" class="btn btn-white d-none d-md-inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
-                      <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
-                      <line x1="16" y1="5" x2="19" y2="8" />
-                    </svg>
-                    Edit
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
           {{content}}
         </div>
       </div>
