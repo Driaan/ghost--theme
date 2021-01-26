@@ -84,14 +84,14 @@
         i = 0;
       for (i; i < len; i++) {
 
+        var element = tables[i];
+        element.className += " table table-vcenter"; = tables[i];
         var parent = tables[i].parentNode;
         var wrapper = document.createElement('div');
         wrapper.className = "table-responsive"
 
         parent.replaceChild(wrapper, tables[i]);
-        wrapper.appendChild(tables[i]);
-        
-        tables[i].className += " table table-vcenter";
+        wrapper.appendChild(element);
       }
     }
   </script>
