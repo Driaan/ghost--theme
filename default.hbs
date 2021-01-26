@@ -77,6 +77,24 @@
   <!-- Tabler Core -->
   <script src="{{asset "js/tabler.min.js"}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
+  <script>
+    window.onload = function () {
+      var tables = document.getElementsByTagName("talbe"),
+        len = tables !== null ? tables.length : 0,
+        i = 0;
+      for (i; i < len; i++) {
+
+        var parent = tables[i].parentNode;
+        var wrapper = document.createElement('div');
+        wrapper.className = "table-responsive"
+
+        parent.replaceChild(wrapper, tables[i]);
+        wrapper.appendChild(tables[i]);
+        
+        tables[i].className += " table table-vcenter";
+      }
+    }
+  </script>
 </body>
 
 </html>
