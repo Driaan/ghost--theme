@@ -1,78 +1,104 @@
-{{!< default}}{{#post}} <div class="container-xl">
-    <div class="page-header d-print-none">
-        <div class="row align-items-center">
-            <div class="col">
-                <h2 class="page-title">
-                    Wiki
-                </h2>
-            </div>
+{{!< default}} <div class="container-xl">
+  <div class="page-header d-print-none">
+    <div class="row align-items-center">
+      <div class="col">
+        <!-- Page pre-title -->
+
+        <h2 class="page-title">
+          Wiki
+        </h2>
+      </div>
+      <!-- Page title actions -->
+      <div class="col-auto ms-auto d-print-none">
+        <div class="btn-list">
+          <span class="d-none d-sm-inline">
+            <a href="https://wiki.apps.error.co.za/ghost/#/editor/post" target="_blank" class="btn btn-white btn-sm">
+              New page
+            </a>
+          </span>
+          <a href="edit/" class="btn btn-primary d-none d-sm-inline-block btn-sm">
+            Edit
+          </a>
+          <a href="#" class="btn btn-primary d-sm-none btn-icon" aria-label="Edit">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+              <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+              <line x1="16" y1="5" x2="19" y2="8" />
+            </svg>
+          </a>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="d-none d-lg-block col-lg-3">
-            <ul class="nav nav-vertical">
-                <li class="nav-item">
-                    <a href="https://wiki.apps.error.co.za/ghost/#/editor/post" class="nav-link">
-                        <span class="nav-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
-                                <path fill="#232e3c"
-                                    d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" />
-                            </svg>
-                        </span>
-                        New page
-                    </a>
-                </li>
-                {{!-- <li class="nav-item">
-                    <a href="edit/" class="btn btn-white d-none d-md-inline-flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
-                            <path fill="#232e3c"
-                                d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" />
-                        </svg>
-                        New Page
-                    </a>
-                </li> --}}
-                <li class="nav-item">
-                    <a href="#student-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
-                        <span class="nav-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" data-name="Layer 1"
-                                viewBox="0 0 24 24">
-                                <path fill="#232e3c"
-                                    d="M21,10a.99974.99974,0,0,0,1-1V6a.9989.9989,0,0,0-.68359-.94824l-9-3a1.002,1.002,0,0,0-.63282,0l-9,3A.9989.9989,0,0,0,2,6V9a.99974.99974,0,0,0,1,1H4v7.18427A2.99507,2.99507,0,0,0,2,20v2a.99974.99974,0,0,0,1,1H21a.99974.99974,0,0,0,1-1V20a2.99507,2.99507,0,0,0-2-2.81573V10ZM20,21H4V20a1.001,1.001,0,0,1,1-1H19a1.001,1.001,0,0,1,1,1ZM6,17V10H8v7Zm4,0V10h4v7Zm6,0V10h2v7ZM4,8V6.7207l8-2.667,8,2.667V8Z" />
-                            </svg>
-                        </span>
-                        Student
-                        <span class="nav-link-toggle"></span>
-                    </a>
-                    <ul class="nav nav-pills collapse show" id="student-base">
-                        {{#get "posts" filter="tags:[student]"}}
-                        {{#foreach posts}}
-                        {{> "docsVerticalListItem"}}
-                        {{/foreach}}
-                        {{/get}}
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#hevisco-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
-                        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon"
-                                viewBox="0 0 24 24">
-                                <path fill="#232e3c"
-                                    d="M19,6.5H16v-1a3,3,0,0,0-3-3H11a3,3,0,0,0-3,3v1H5a3,3,0,0,0-3,3v9a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3v-9A3,3,0,0,0,19,6.5Zm-9-1a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1v1H10Zm10,13a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13.45H7V14.5a1,1,0,0,0,2,0V13.45h6V14.5a1,1,0,0,0,2,0V13.45h3Zm0-7H4V9.5a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1Z" />
-                            </svg>
-                        </span>
-                        HevisCo
-                        <span class="nav-link-toggle"></span>
-                    </a>
-                    <ul class="nav nav-pills collapse show" id="hevisco-base">
-                        {{#get "posts" filter="tags:[hevisco]"}}
-                        {{#foreach posts}}
-                        {{> "docsVerticalListItem"}}
-                        {{/foreach}}
-                        {{/get}}
-                    </ul>
-                </li>
-            </ul>
+  </div>
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-3">
+      <ul class="nav nav-vertical">
+        <li class="nav-item">
+          <a href="#nocategory-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+            <span class="nav-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                <path fill="#232e3c"
+                  d="M3.71,16.29a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21,1,1,0,0,0-.21.33,1,1,0,0,0,.21,1.09,1.15,1.15,0,0,0,.33.21.94.94,0,0,0,.76,0,1.15,1.15,0,0,0,.33-.21,1,1,0,0,0,.21-1.09A1,1,0,0,0,3.71,16.29ZM7,8H21a1,1,0,0,0,0-2H7A1,1,0,0,0,7,8ZM3.71,11.29a1,1,0,0,0-1.09-.21,1.15,1.15,0,0,0-.33.21,1,1,0,0,0-.21.33.94.94,0,0,0,0,.76,1.15,1.15,0,0,0,.21.33,1.15,1.15,0,0,0,.33.21.94.94,0,0,0,.76,0,1.15,1.15,0,0,0,.33-.21,1.15,1.15,0,0,0,.21-.33.94.94,0,0,0,0-.76A1,1,0,0,0,3.71,11.29ZM21,11H7a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2ZM3.71,6.29a1,1,0,0,0-.33-.21,1,1,0,0,0-1.09.21,1.15,1.15,0,0,0-.21.33.94.94,0,0,0,0,.76,1.15,1.15,0,0,0,.21.33,1.15,1.15,0,0,0,.33.21,1,1,0,0,0,1.09-.21,1.15,1.15,0,0,0,.21-.33.94.94,0,0,0,0-.76A1.15,1.15,0,0,0,3.71,6.29ZM21,16H7a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z" />
+              </svg>
+            </span>
+            No Category
+            <span class="nav-link-toggle"></span>
+          </a>
+          <ul class="nav nav-pills collapse show" id="nocategory-base">
+            {{#get "posts" filter="tags:-[student,hevisco]"}}
+            {{#foreach posts}}
+            {{> "docsVerticalListItem"}}
+            {{/foreach}}
+            {{/get}}
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#student-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+            <span class="nav-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" data-name="Layer 1" viewBox="0 0 24 24">
+                <path fill="#232e3c"
+                  d="M21,10a.99974.99974,0,0,0,1-1V6a.9989.9989,0,0,0-.68359-.94824l-9-3a1.002,1.002,0,0,0-.63282,0l-9,3A.9989.9989,0,0,0,2,6V9a.99974.99974,0,0,0,1,1H4v7.18427A2.99507,2.99507,0,0,0,2,20v2a.99974.99974,0,0,0,1,1H21a.99974.99974,0,0,0,1-1V20a2.99507,2.99507,0,0,0-2-2.81573V10ZM20,21H4V20a1.001,1.001,0,0,1,1-1H19a1.001,1.001,0,0,1,1,1ZM6,17V10H8v7Zm4,0V10h4v7Zm6,0V10h2v7ZM4,8V6.7207l8-2.667,8,2.667V8Z" />
+              </svg>
+            </span>
+            Student
+            <span class="nav-link-toggle"></span>
+          </a>
+          <ul class="nav nav-pills collapse show" id="student-base">
+            {{#get "posts" filter="tags:[student]"}}
+            {{#foreach posts}}
+            {{> "docsVerticalListItem"}}
+            {{/foreach}}
+            {{/get}}
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#hevisco-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
+            <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                <path fill="#232e3c"
+                  d="M19,6.5H16v-1a3,3,0,0,0-3-3H11a3,3,0,0,0-3,3v1H5a3,3,0,0,0-3,3v9a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3v-9A3,3,0,0,0,19,6.5Zm-9-1a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1v1H10Zm10,13a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13.45H7V14.5a1,1,0,0,0,2,0V13.45h6V14.5a1,1,0,0,0,2,0V13.45h3Zm0-7H4V9.5a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1Z" />
+              </svg>
+            </span>
+            HevisCo
+            <span class="nav-link-toggle"></span>
+          </a>
+          <ul class="nav nav-pills collapse show" id="hevisco-base">
+            {{#get "posts" filter="tags:[hevisco]"}}
+            {{#foreach posts}}
+            {{> "docsVerticalListItem"}}
+            {{/foreach}}
+            {{/get}}
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-9">
+      <div class="card card-md">
+        <div class="card-body">
+
         </div>
-        hmm
+      </div>
     </div>
-    </div>
-    {{/post}}
+  </div>
+  </div>
