@@ -22,12 +22,13 @@
                 <rect x="4" y="4" width="16" height="16" rx="4" />
               </svg>
             </span>
-            All {{current}}
+            All 
             <span class="nav-link-toggle"></span>
           </a>
           <ul class="nav nav-pills collapse show" id="all-base">
             {{#get "posts" filter="tags:-[student, hevisco]"}}
             {{#foreach posts}}
+            {{#if current}} active{{/if}}
             {{> "docsVerticalListItem"}}
             {{/foreach}}
             {{/get}}
