@@ -1,4 +1,4 @@
-{{!< default}}{{#post}} {{#if current}} CURRENT {{/if}} <div class="container-xl">
+{{!< default}}{{#post}} <div class="container-xl">
   <div class="page-header d-print-none">
     <div class="row align-items-center">
       <div class="col">
@@ -12,17 +12,15 @@
     <div class="d-none d-lg-block col-lg-3">
       <ul class="nav nav-vertical">
         <li class="nav-item">
-          <a href="#all-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
-            All
-            <span class="nav-link-toggle"></span>
+          <a href="https://wiki.apps.error.co.za/ghost/#/editor/post" class="nav-link">
+            <span class="nav-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                <path fill="#232e3c"
+                  d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" />
+              </svg>
+            </span>
+            {{title}}
           </a>
-          <ul class="nav nav-pills collapse show" id="all-base">
-            {{#get "posts" filter="tags:-[student, hevisco]"}}
-            {{#foreach posts}}
-            {{> "docsVerticalListItem"}}
-            {{/foreach}}
-            {{/get}}
-          </ul>
         </li>
         <li class="nav-item">
           <a href="#student-base" class="nav-link" data-bs-toggle="collapse" aria-expanded="true">
@@ -66,22 +64,6 @@
     <div class="col-lg-9">
       <div class="card card-lg">
         <div class="card-body">
-          {{!-- <div class="d-flex mb-4">
-            <h1 class="mt-0">{{title}}</h1>
-            <p class="ms-auto">
-              <a href="edit/" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon pe-1 text-blue" width="24" height="24"
-                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-                Edit
-              </a>
-            </p>
-          </div> --}}
           <div class="page-header">
             <div class="row align-items-center mw-100">
               <div class="col">
