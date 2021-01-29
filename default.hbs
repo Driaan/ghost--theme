@@ -19,21 +19,22 @@
 
 <body class="antialiased">
   <div class="page">
-    <header class="navbar navbar-expand-md navbar-light d-print-none">
+    <header class="navbar navbar-expand-md navbar-transparent d-print-none">
       <div class="container-xl">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-          <a href="https://wiki.apps.error.co.za/">
-            <img src="{{asset "img/logo-transparent.png"}}" width="110" height="32" alt="BookStack" class="navbar-brand-image">
+          <a href=".">
+            Wiki
           </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
           <div class="nav-item dropdown">
             <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
               aria-label="Open user menu">
-              <span class="avatar avatar-sm" style="background-image: url(../static/avatars/000m.jpg)"></span>
+              <span class="avatar avatar-sm"
+                style="background-image: url(https://lh3.googleusercontent.com/ogw/ADGmqu94lk0eQOvai2DnKSt9jvrP2a7gpn1YFW1hQ0BtWjo=s32-c-mo)"></span>
               <div class="d-none d-xl-block ps-2">
                 <div>Driaan de Beste</div>
                 <div class="mt-1 small text-muted">Administrator</div>
@@ -46,11 +47,80 @@
               <a href="#" class="dropdown-item">Logout</a>
             </div>
           </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">
+                  <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
+                      class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                      fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                    </svg>
+                  </span>
+                  <span class="nav-link-title">
+                    Wiki
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/notes">
+                  <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
+                      class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                      fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                    </svg>
+                  </span>
+                  <span class="nav-link-title">
+                    Notes
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" role="button"
+                  aria-expanded="false">
+                  <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
+                      class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                      fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                    </svg>
+                  </span>
+                  <span class="nav-link-title">
+                    Tools
+                  </span>
+                </a>
+                {{ navigation}}
+              </li>
 
+            </ul>
+            <div class="ms-md-auto ps-md-4 py-2 py-md-0 me-md-4 order-first order-md-last flex-grow-1 flex-md-grow-0">
+              <form action="." method="get">
+                <div class="input-icon">
+                  <span class="input-icon-addon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </span>
+                  <input type="text" class="form-control form-control-rounded" placeholder="Search…"
+                    aria-label="Search in website">
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </header>
-    {{ navigation }}
+    {{!-- {{ navigation }} --}}
 
     <div class="content">
       {{{body}}}
